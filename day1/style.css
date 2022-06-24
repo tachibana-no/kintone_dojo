@@ -1,0 +1,18 @@
+html {
+    font-size: 62.5%;
+}
+
+.title{
+    padding:1rem 2rem;
+    border-top: 3px dotted brown;
+    border-bottom: 3px dotted brown;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th,td{
+    border:solid 1px;
+    padding: 1rem;
+}
