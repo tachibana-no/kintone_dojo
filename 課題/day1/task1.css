@@ -5,33 +5,55 @@ html {
 
 .kintonespace {
   background-color: #ffbf00;
+  /* width:100%; */
 }
 .img_kn {
-  width: 55%; 
+  width: 90%; 
   display: block;
-  /* margin-top: 80px;
-  margin-bottom: 80px; */
   margin-left: auto;
   margin-right: auto;
-  
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
 .officespace{
   background-color: #1992d4;
+}
 
+.img_of {
+  width: 90%; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .garoonspace{
   background-color: #039;
 }
 
+.img_gr {
+  width: 90%; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .mailespace {
   background-color: #df4356;
 }
 
-image {
-  margin: auto;
+.img_mw {
+  width: 90%; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 /* 以下は修正しない */
 html,
