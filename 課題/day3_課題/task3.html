@@ -105,57 +105,50 @@
     // ここに処理を記載する
     'use strict';
 
-    //テーブルの中身
+    // テーブルの中身
     const fileManage = {
       f001: {
-        folderName: "情報システム部",
-        viewAuth: "Everyone",
-        editAuth: "情報システム部",
-        deleteAuth: "情報システム部"
+        folderName: '情報システム部',
+        viewAuth: 'Everyone',
+        editAuth: '情報システム部',
+        deleteAuth: '情報システム部'
       },
       f002: {
-        folderName: "経営管理部",
-        viewAuth: "経営管理部",
-        editAuth: "経営管理部",
-        deleteAuth: "経営管理部"
+        folderName: '経営管理部',
+        viewAuth: '経営管理部',
+        editAuth: '経営管理部',
+        deleteAuth: '経営管理部'
       },
       f003: {
-        folderName: "営業部",
-        viewAuth: "Everyone",
-        editAuth: "営業部",
-        deleteAuth: "営業部"
+        folderName: '営業部',
+        viewAuth: 'Everyone',
+        editAuth: '営業部',
+        deleteAuth: '営業部'
       }
-    }
+    };
     console.log(fileManage);
 
-    //オブジェクトのmainkeyを取り出す　→　問題1
-    const mainKeys = Object.keys(fileManage); //["f001","f002","f003"]
-    
+    // オブジェクトのmainkeyを取り出す→問題1
+    const mainKeys = Object.keys(fileManage);
+    // リストの要素を取得→問題2
+    const ul = document.getElementById('list');
 
-    //リストの要素を取得　→　問題2
-    const ul = document.getElementById("list");
+    mainKeys.forEach(function(mainKey) {
+      const keys = Object.keys(fileManage[mainKey]);
+      const values = Object.values(fileManage[mainKey]);
 
-    //mainkeyを取り出す
-    for (let i = 0; i < mainKeys.length; i++) {
-      const mainKey = mainKeys[i]; //f001
-      const keys = Object.keys(fileManage[mainKey]);//['folderName', 'viewAuth', 'editAuth', 'deleteAuth']
-      const values = Object.values(fileManage[mainKey]);// ['情報システム部', 'Everyone', '情報システム部', '情報システム部']
- 
-
-      //要素2番目がEveryoneであればリストに書き込み　→　問題2
-      if (values[1] === "Everyone") {
-        const li = document.createElement("li")
+      // 要素2番目がEveryoneであればリストに書き込み→問題2
+      if (values[1] === 'Everyone') {
+        const li = document.createElement('li');
         li.appendChild(document.createTextNode(values[0]));
         ul.appendChild(li);
       }
 
-      //各オブジェクトのkeyと要素を取り出す。　→　問題2
-      for (let j = 0; j < keys.length; j++) {
-        //各idに書き込み
-        document.getElementById(`${mainKeys[i]}-${keys[j]}`).textContent = values[j];
-      }
+      keys.forEach(function(key) {
+        document.getElementById(`${mainKey}-${key}`).textContent = fileManage[mainKey][key];
+      });
 
-    }
+    });
 
 
   </script>
