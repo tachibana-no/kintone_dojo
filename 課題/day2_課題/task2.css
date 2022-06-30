@@ -1,0 +1,11 @@
+
+#tbl{
+    border-collapse: collapse;
+    background-color: rgb(138, 198, 250);
+}
+
+th,td{
+    background-color: aliceblue;
+    border:solid 1px;
+    /* padding: 1rem; */
+}

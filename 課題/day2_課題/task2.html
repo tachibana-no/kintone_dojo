@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dojo課題</title>
+  <link rel="stylesheet" type="text/css" href="task2.css">
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    header {
+      background-color: #1aaedb;
+      border-bottom: #ead963 6px solid;
+    }
+
+    .container {
+      padding: 16px;
+      padding-left: 120px;
+    }
+
+    header h1,
+    header h2 {
+      margin: 0;
+      color: #fff;
+      line-height: 1;
+    }
+
+    header h1 {
+      padding: 30px 0 5px 0;
+      font-size: 24px;
+      border-bottom: 1px dotted #fff;
+      font-weight: 500;
+    }
+
+    header h2 {
+      padding: 6px 0 0 0;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>kintone dojo</h1>
+      <h2>JavaScript課題①</h2>
+    </div>
+  </header>
+  <main class="container">
+    <h1>ファイル管理一覧</h1>
+    <h2>全てのフォルダとアクセス権を表示</h2>
+    <table id="tbl">
+      <tr>
+        <th>フォルダ名</th>
+        <th>閲覧権限</th>
+        <th>編集権限</th>
+        <th>削除権限</th>
+      </tr>
+    </table>
+
+  </main>
+  <script>
+    // ここに処理を追記
+    'use strict';
+
+    //テーブルの中身
+    const fileManage = {
+      f001: {
+        folderName: "情報システム部",
+        viewAuth: "Everyone",
+        editAuth: "情報システム部",
+        deleteAuth: "情報システム部"
+      },
+      f002: {
+        folderName: "経営管理部",
+        viewAuth: "経営管理部",
+        editAuth: "経営管理部",
+        deleteAuth: "経営管理部"
+      },
+      f003: {
+        folderName: "営業部",
+        viewAuth: "Everyone",
+        editAuth: "営業部",
+        deleteAuth: "営業部"
+      }
+    }
+    console.log(fileManage);
+
+    //tableの中に行を追加する  
+    //オブジェクトから要素を抽出する。
+    //追加した行に要素を書き込む　
+
+    //テーブルの要素を取得
+    const tbl = document.getElementById("tbl");
+
+    //fileManageの要素数とf001の中身の要素数
+    const rowCount = Object.keys(fileManage);
+    const colCount = Object.values(fileManage[rowCount[0]]);
+
+    // const val = Object.values(fileManage[rowCount[0]]);
+    // console.log(val);
+
+
+    for (let i = 0; i <= rowCount.length; i++) {
+      //オブジェクト数だけ行を追加する
+      const tr = document.createElement("tr");
+
+      //オブジェクトの要素数だけ列を追加する
+      for (let j = 0; j < colCount.length; j++) {
+        const td = document.createElement("td");
+
+        //要素を書き込む
+        const val = Object.values(fileManage[rowCount[i]]);
+        td.innerHTML = val[j];
+
+        tr.appendChild(td);
+      }
+      tbl.appendChild(tr);
+    }
+
+
+  </script>
+</body>
+
+</html>
