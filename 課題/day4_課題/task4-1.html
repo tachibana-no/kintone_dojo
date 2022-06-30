@@ -60,61 +60,58 @@
   </main>
   <script>
     // ここに処理を記載する
-    "use strict";
+    'use strict';
 
-    let mainPrice = 3900;
-    const account = 5;
-    const price = document.getElementById("price");
-    const chk = document.getElementsByClassName("chk");
-    const optionPrice = Number(chk[0].value) * account;
-    const discPrice = Number(chk[1].value) * account;
+    const mainPrice = 3900;
+    const price = document.getElementById('price');
+        
 
+    // オプションボタンが押されたとき
+    document.getElementsByClassName('chk')[0].onclick = () => {
 
-    //オプションボタンが押されたとき
-    document.getElementsByClassName("chk")[0].onclick = () => {
-
-      const result = document.getElementsByClassName("chk")[0].checked;
-      const result2 = document.getElementsByClassName("chk")[1].checked;
+      const optionResult = document.getElementsByClassName('chk')[0].checked;
+      const dicsResult = document.getElementsByClassName('chk')[1].checked;
 
 
-      if (result && result2) {
+      if (optionResult && dicsResult) {
         mainPrice = 6150;
         price.innerText = mainPrice;
-      } else if (result && !result2) {
+      } else if (optionResult && !dicsResult) {
         mainPrice = 5150;
         price.innerText = mainPrice;
-      } else if (!result && result2) {
+      } else if (!optionResult && dicsResult) {
         mainPrice = 4900;
         price.innerText = mainPrice;
-      } else if (!result && !result2) {
+      } else if (!optionResult && !dicsResult) {
         mainPrice = 3900;
         price.innerText = mainPrice;
-      }//if end
+      }// if end
 
 
-      //ディスク容量が押されたとき
-      document.getElementsByClassName("chk")[1].onclick = () => {
+      // ディスク容量が押されたとき
+      document.getElementsByClassName('chk')[1].onclick = () => {
 
-        const result = document.getElementsByClassName("chk")[0].checked;
-        const result2 = document.getElementsByClassName("chk")[1].checked;
+        const optionResult2 = document.getElementsByClassName('chk')[0].checked;
+        const dicsResult2 = document.getElementsByClassName('chk')[1].checked;
 
 
-        if (result && result2) {
+        if (optionResult2 && dicsResult2) {
           mainPrice = 6150;
           price.innerText = mainPrice;
-        } else if (result && !result2) {
+        } else if (optionResult2 && !dicsResult2) {
           mainPrice = 5150;
           price.innerText = mainPrice;
-        } else if (!result && result2) {
+        } else if (!optionResult2 && dicsResult2) {
           mainPrice = 4900;
           price.innerText = mainPrice;
-        } else if (!result && !result2) {
+        } else if (!optionResult2 && !dicsResult2) {
           mainPrice = 3900;
           price.innerText = mainPrice;
-        }//if end
+        }// if end
 
-      }//discEvent end
-    }//optionEvent end
+      };// discEvent end
+    };// optionEvent end
+
 
 
   </script>

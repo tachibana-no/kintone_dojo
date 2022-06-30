@@ -76,42 +76,38 @@
   </main>
   <script>
     // ここに処理を記載する
-    "use strict";
+    'use strict';
 
-    
-    const price = document.getElementById("price");
-    const chk = document.getElementsByClassName("chk");
-    const slct = document.getElementsByClassName("slct");
+    const chk = document.getElementsByClassName('chk');
+    const slct = document.getElementsByClassName('slct');
+    const price = document.getElementById('price');
 
-    //ボタンが押されたとき
-    document.getElementById("btn").onclick = () => {
-      const result = document.getElementsByClassName("chk")[0].checked;
-      const result2 = document.getElementsByClassName("chk")[1].checked;
-    
-      
-      let mainPrice = 3900;
+    // ボタンが押されたとき
+    document.getElementById('btn').onclick = () => {
+      const result = document.getElementsByClassName('chk')[0].checked;
+      const result2 = document.getElementsByClassName('chk')[1].checked;
+
+      const mainPrice = 3900;
       const optionPriceNumber = Number(slct[0].value);
       const discPriceNumber = Number(slct[1].value);
       const optionPrice = Number(chk[0].value) * optionPriceNumber;
       const discPrice = Number(chk[1].value) * discPriceNumber;
 
-      let addPrice = "";
-
       if (result && result2) {
 
         price.innerText = mainPrice + optionPrice + discPrice;
       } else if (result && !result2) {
-  
+
         price.innerText = mainPrice + optionPrice;
       } else if (!result && result2) {
-        
+
         price.innerText = mainPrice + discPrice;
       } else if (!result && !result2) {
-        
+
         price.innerText = mainPrice;
-      }//if end
-      
-    }//btn end
+      }// if end
+
+    };// btn end
 
 
 
