@@ -1,0 +1,21 @@
+table{
+    border-collapse: collapse;
+    padding: auto;
+}
+
+tr,td{
+    border: solid 1px;
+    padding:10px;
+}
+
+.product {
+    background-color: rgb(111, 131, 248);
+}
+
+.ir {
+    background-color: rgb(254, 91, 91);
+}
+
+.company {
+    background-color: rgb(139, 247, 186);
+}
