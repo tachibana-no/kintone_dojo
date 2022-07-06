@@ -77,47 +77,48 @@
       const optionResult = document.getElementsByClassName('chk')[0].checked;
       const dicsResult = document.getElementsByClassName('chk')[1].checked;
 
+      let result = '';
       
       if (optionResult && dicsResult) {
-        price.innerText = fullPrice;
+        result = fullPrice;
         
       } else if (optionResult && !dicsResult) {
-        price.innerText = plusOptionPrice;
+        result = plusOptionPrice;
 
       } else if (!optionResult && dicsResult) {
-        price.innerText = plusDiscPrice;
+        result = plusDiscPrice;
 
       } else if (!optionResult && !dicsResult) {
-        price.innerText = mainPrice;
+        result = mainPrice;
 
       }// if end
-
-
+      price.innerText = result;
+      
+      
       // ディスク容量が押されたとき
       document.getElementsByClassName('chk')[1].onclick = () => {
-
+        
         const optionResult2 = document.getElementsByClassName('chk')[0].checked;
         const dicsResult2 = document.getElementsByClassName('chk')[1].checked;
-
-
-      if (optionResult2 && dicsResult2) {
-        price.innerText = fullPrice;
         
-      } else if (optionResult2 && !dicsResult2) {
-        price.innerText = plusOptionPrice;
-
-      } else if (!optionResult2 && dicsResult2) {
-        price.innerText = plusDiscPrice;
-
-      } else if (!optionResult2 && !dicsResult2) {
-        price.innerText = mainPrice;
+        let result2 = '';
+        if (optionResult2 && dicsResult2) {
+          result2 = fullPrice;
+          
+        } else if (optionResult2 && !dicsResult2) {
+          result2 = plusOptionPrice;
+          
+        } else if (!optionResult2 && dicsResult2) {
+          result2 = plusDiscPrice;
+          
+        } else if (!optionResult2 && !dicsResult2) {
+          result2 = mainPrice;
+          
+        }// if end
+        price.innerText = result2;
         
-      }// if end
-
       };// discEvent end
     };// optionEvent end
-
-
 
   </script>
 </body>
