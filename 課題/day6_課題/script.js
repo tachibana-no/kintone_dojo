@@ -9,10 +9,7 @@
         const newRow4 = createValue_('心を動かす');
         const newRow5 = createValue_('知識を増やす');
         const newRow6 = createValue_('公明正大');
-       
-
-        console.log(newRow1);
-
+ 
         event.record.Table.value = [
             newRow1,
             newRow2,
@@ -21,9 +18,8 @@
             newRow5,
             newRow6
         ];
+        
         return event;
-
-
     });
 
     function createValue_(text){
