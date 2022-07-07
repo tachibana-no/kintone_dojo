@@ -24,8 +24,7 @@
 
                 //関数で成形した値を入れ込む
                 event.record.重複禁止項目_文字列.value = createValue_(day, category, controlNumber);
-                console.log(createValue_(day, category, controlNumber));
-
+        
                 return event;
             });
         return event;
