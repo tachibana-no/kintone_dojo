@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dojo</title>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+header {
+  background-color: #1aaedb;
+  border-bottom: #ead963 6px solid;
+}
+.container {
+  padding: 16px;
+  padding-left: 120px;
+}
+header h1,
+header h2 {
+  margin: 0;
+  color: #fff;
+  line-height: 1;
+}
+header h1 {
+  padding: 30px 0 5px 0;
+  font-size: 24px;
+  border-bottom: 1px dotted #fff;
+  font-weight: 500;
+}
+header h2 {
+  padding: 6px 0 0 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+</style>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <h1>kintone dojo</h1>
+    <h2>JavaScript講義</h2>
+  </div>
+</header>
+<main class="container">
+  お名前：　<input type="text" class="form">
+  ご年齢：　<input type="number" class="form">
+  <button id="button">入会</button>
+
+    <p>現在時刻:<div id="time"></div></p>
+
+</main>
+<script>
+  'use strict';
+  
+
+  setInterval(() => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const date = today.getDate();
+    const day = today.getDay();
+    const hour = today.getHours();
+    const minites = today.getMinutes();
+    const seconds = today.getSeconds();  
+    
+    const weekday = ["日","月","火","水","木","金","土"];
+  
+    const show = `${year}年${month}月${date}日　（${weekday[day]}）${hour}時${minites}分${seconds}秒 `;
+    document.getElementById("time").textContent = show;
+    
+  },1000);
+
+  const today2 = dayjs();
+  const format = today2.format("YYYY-MM-DD HH:mm:ss");
+  console.log(format);
+
+
+
+
+  // document.getElementById("button").onclick = () => {
+  //   window.alert("あなたは呪われました");
+  // };
+
+
+
+</script>
+</body>
+</html>
