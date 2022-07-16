@@ -65,57 +65,39 @@
     // オプションボタンが押されたとき
     document.getElementsByClassName('chk')[0].onclick = () => {
 
-      const mainPrice = 3900;
+      let mainPrice = 3900;
       const account = 5;
       const price = document.getElementById('price');
       const optionPrice = Number(document.getElementsByClassName('chk')[0].value) * account;
       const discPrice = Number(document.getElementsByClassName('chk')[1].value);
-      const plusOptionPrice = mainPrice + optionPrice;
-      const plusDiscPrice = mainPrice + discPrice;
-      const fullPrice = mainPrice + optionPrice + discPrice;
+      // const plusOptionPrice = mainPrice + optionPrice;
+      // const plusDiscPrice = mainPrice + discPrice;
+      // const fullPrice = mainPrice + optionPrice + discPrice;
       
       const optionResult = document.getElementsByClassName('chk')[0].checked;
-      const dicsResult = document.getElementsByClassName('chk')[1].checked;
+      // const dicsResult = document.getElementsByClassName('chk')[1].checked;
 
-      let result = '';
+      if(optionResult){
+        mainPrice += optionPrice;
+      }else{
+        mainPrice -= optionPrice;
+      }
       
-      if (optionResult && dicsResult) {
-        result = fullPrice;
-        
-      } else if (optionResult && !dicsResult) {
-        result = plusOptionPrice;
-
-      } else if (!optionResult && dicsResult) {
-        result = plusDiscPrice;
-
-      } else if (!optionResult && !dicsResult) {
-        result = mainPrice;
-
-      }// if end
-      price.innerText = result;
+      price.innerText = mainPrice;
       
       
       // ディスク容量が押されたとき
       document.getElementsByClassName('chk')[1].onclick = () => {
         
-        const optionResult2 = document.getElementsByClassName('chk')[0].checked;
+        // const optionResult2 = document.getElementsByClassName('chk')[0].checked;
         const dicsResult2 = document.getElementsByClassName('chk')[1].checked;
         
-        let result2 = '';
-        if (optionResult2 && dicsResult2) {
-          result2 = fullPrice;
-          
-        } else if (optionResult2 && !dicsResult2) {
-          result2 = plusOptionPrice;
-          
-        } else if (!optionResult2 && dicsResult2) {
-          result2 = plusDiscPrice;
-          
-        } else if (!optionResult2 && !dicsResult2) {
-          result2 = mainPrice;
-          
-        }// if end
-        price.innerText = result2;
+        if(dicsResult2){
+          mainPrice += discPrice;
+        }else{
+          mainPrice -= discPrice;
+        }
+        price.innerText = mainPrice;
         
       };// discEvent end
     };// optionEvent end
