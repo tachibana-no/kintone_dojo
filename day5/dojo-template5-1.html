@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dojo</title>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+header {
+  background-color: #1aaedb;
+  border-bottom: #ead963 6px solid;
+}
+.container {
+  padding: 16px;
+  padding-left: 120px;
+}
+header h1,
+header h2 {
+  margin: 0;
+  color: #fff;
+  line-height: 1;
+}
+header h1 {
+  padding: 30px 0 5px 0;
+  font-size: 24px;
+  border-bottom: 1px dotted #fff;
+  font-weight: 500;
+}
+header h2 {
+  padding: 6px 0 0 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+</style>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <h1>kintone dojo</h1>
+    <h2>JavaScript講義</h2>
+  </div>
+</header>
+<script>
+  'use strict';
+
+  // promiseオブジェクト　（状態：pending<未解決> /　resolve<解決>/reject<処理が失敗したよ>）
+  //　順番に処理を実行する
+  // thenで処理を繋いでいく
+  // catchは失敗した時の
+  const promise = new Promise((resolve,reject) => {
+    console.log("時間のかかる処理"); //レコードを取得する処理
+    // resolve("データ"); //成功したよの合図
+    reject();
+  })
+  .then((val) =>{
+    console.log("次にやる処理"); //レコードの中身を書き換える
+    console.log(val); //resolveに入ったデータがthenの引数に入る
+  })
+  .catch(()=>{ //失敗したとき
+    console.log("失敗しています。")
+  });
+
+
+</script>
+</body>
+</html>
